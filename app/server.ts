@@ -5,7 +5,7 @@ const fileList: string[] = [];
 const errorFileList: string[] = [];
 
 // 要检查的入口文件夹
-const rootDir = "./dist";
+let rootDir = "./dist";
 // 会被统计的文件后缀名
 const suffixWhiteList = [".ts", ".js", ".css", ".html"];
 // 中文正则匹配
@@ -64,5 +64,11 @@ const fn = async () => {
   console.error(`Error: ==========================`);
   console.log(`总计扫描文件${fileList.length}个, 存在中文的文件${errorFileList.length}个`);
 };
+
+const outerDir = process.argv.find(str => str.includes('dir='));
+
+if (outerDir) {
+    rootDir = outerDir?.split('=')[1]
+}
 
 fn();
