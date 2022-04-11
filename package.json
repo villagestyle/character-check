@@ -1,0 +1,26 @@
+{
+  "name": "file-scan",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon ./app/server.ts",
+    "commit": "git-cz",
+    "check": "node ./app/server.ts"
+  },
+  "dependencies": {
+    "ts-node": "^9.1.1",
+    "ts-node-dev": "^1.0.0-pre.40",
+    "typescript": "^4.5.4",
+    "cz-conventional-changelog": "^3.3.0",
+    "cz-customizable": "^6.3.0"
+  },
+  "author": "",
+  "license": "ISC",
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-customizable"
+    }
+  }
+}
